@@ -12,7 +12,8 @@
 #
 # Indexes
 #
-#  index_variations_on_item_id  (item_id)
+#  index_variations_on_color_and_size_and_item_id  (color,size,item_id) UNIQUE
+#  index_variations_on_item_id                     (item_id)
 #
 # Foreign Keys
 #

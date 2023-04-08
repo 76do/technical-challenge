@@ -1,5 +1,5 @@
 class CreateVariations < ActiveRecord::Migration[7.0]
-  def change
+  def up
     create_table :variations do |t|
       t.integer :color, null: false
       t.integer :size, null: false
@@ -8,5 +8,9 @@ class CreateVariations < ActiveRecord::Migration[7.0]
 
       t.timestamps
     end
+  end
+
+  def down
+    drop_table :variations
   end
 end
