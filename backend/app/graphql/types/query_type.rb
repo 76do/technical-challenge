@@ -9,7 +9,6 @@ module Types
 
     field :items, [Types::ItemType], null: false
     def items
-      puts Item.limit(5)
       Item.all
     end
   end

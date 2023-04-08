@@ -9,5 +9,9 @@ module Types
     field :shop, Types::ShopType, null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+
+    def shop
+      Loaders::RecordLoader.for(Shop).load(object.shop_id)
+    end
   end
 end
