@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_08_024218) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_08_031330) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -32,5 +32,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_08_024218) do
     t.index ["name"], name: "index_shops_on_name", unique: true
   end
 
+  create_table "variations", force: :cascade do |t|
+    t.integer "color", null: false
+    t.integer "size", null: false
+    t.integer "stock", null: false
+    t.bigint "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_variations_on_item_id"
+  end
+
   add_foreign_key "items", "shops"
+  add_foreign_key "variations", "items"
 end
