@@ -10,10 +10,6 @@ AllCops:
   DisplayCopNames: true
   Exclude:
     - "Gemfile"
-    - "app/controllers/**/*"
-    - "app/graphql/**/*"
-    - "app/jobs/application_job.rb"
-    - "app/models/application_record.rb"
     - "bin/**/*"
     - "config/**/*"
     - "config.ru"
