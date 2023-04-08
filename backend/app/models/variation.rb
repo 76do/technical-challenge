@@ -20,4 +20,9 @@
 #  fk_rails_...  (item_id => items.id)
 #
 class Variation < ApplicationRecord
+  belongs_to :item 
+  
+  validates: color, presence: true, uniqueness: { scope: [:size, :item_id]}
+  validates: size, presence: true
+  validates: stock, presence: true
 end

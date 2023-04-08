@@ -22,7 +22,7 @@
 class Item < ApplicationRecord
   belongs_to :shop
 
-  validates :title, presence: true, uniqueness: { scope: :shop_id }
   validates :price, presence: true
   validates :status, presence: true
+  validates :title, presence: true, uniqueness: { scope: :shop_id }
 end
