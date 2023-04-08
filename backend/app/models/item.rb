@@ -21,6 +21,7 @@
 #
 class Item < ApplicationRecord
   belongs_to :shop
+  has_many :variations, dependent: :destroy
 
   validates :price, presence: true
   validates :status, presence: true
