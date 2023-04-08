@@ -20,6 +20,7 @@
 #  fk_rails_...  (shop_id => shops.id)
 #
 class Item < ApplicationRecord
+  enum status: { unpublished: 0, published: 1 }
   belongs_to :shop
   has_many :variations, dependent: :destroy
 
