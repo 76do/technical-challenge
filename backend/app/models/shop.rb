@@ -12,5 +12,5 @@
 #  index_shops_on_name  (name) UNIQUE
 #
 class Shop < ApplicationRecord
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 end
