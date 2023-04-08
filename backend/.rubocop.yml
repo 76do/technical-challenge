@@ -1,0 +1,31 @@
+inherit_from: .rubocop_todo.yml
+
+require:
+  - rubocop-performance
+  - rubocop-rails
+
+AllCops:
+  SuggestExtensions: false
+  NewCops: enable
+  DisplayCopNames: true
+  Exclude:
+    - "Gemfile"
+    - "app/controllers/**/*"
+    - "app/graphql/**/*"
+    - "app/jobs/application_job.rb"
+    - "app/models/application_record.rb"
+    - "bin/**/*"
+    - "config/**/*"
+    - "config.ru"
+    - "db/**/*"
+    - "log/**/*"
+    - "lib/**/*"
+    - "public/**/*"
+    - "test/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - ".irbrc"
+    - "Rakefile"
+
+Style/FrozenStringLiteralComment:
+  Enabled: false

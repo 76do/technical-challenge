@@ -22,9 +22,9 @@
 class Variation < ApplicationRecord
   enum color: { BLACK: 0, WHITE: 1, NAVY: 2, BROWN: 3 }
   enum size: { S: 0, M: 1, L: 2 }
-  belongs_to :item 
+  belongs_to :item
 
-  validates :color, presence: true, uniqueness: { scope: [:size, :item_id]}
+  validates :color, presence: true, uniqueness: { scope: %i[size item_id] }
   validates :size, presence: true
   validates :stock, presence: true
 end
