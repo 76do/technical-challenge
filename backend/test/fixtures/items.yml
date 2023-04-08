@@ -12,7 +12,8 @@
 #
 # Indexes
 #
-#  index_items_on_shop_id  (shop_id)
+#  index_items_on_shop_id            (shop_id)
+#  index_items_on_title_and_shop_id  (title,shop_id) UNIQUE
 #
 # Foreign Keys
 #
