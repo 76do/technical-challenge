@@ -7,6 +7,7 @@ module Types
     field :price, Integer, null: false
     field :status, Types::StatusEnum, null: false
     field :shop, Types::ShopType, null: false
+    field :variations, [Types::VariationType], null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
 

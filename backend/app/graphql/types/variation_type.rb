@@ -3,8 +3,8 @@
 module Types
   class VariationType < Types::BaseObject
     field :id, ID, null: false
-    field :color, Integer, null: false
-    field :size, Integer, null: false
+    field :color, Types::ColorsEnum, null: false
+    field :size, Types::SizesEnum, null: false
     field :stock, Integer, null: false
     field :item_id, Integer, null: false
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
