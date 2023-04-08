@@ -43,5 +43,7 @@ group :development do
   # gem "spring"
   # https://github.com/ctran/annotate_models
   gem 'annotate'
+  gem 'rubocop', require: false
+  gem 'rubocop-performance', require: false  
+  gem 'rubocop-rails', require: false
 end
-
