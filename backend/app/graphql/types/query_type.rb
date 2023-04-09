@@ -12,7 +12,9 @@ module Types
       Item.all
     end
 
-    field :item, Types::ItemType, null: false
+    field :item, Types::ItemType, null: false do
+      argument :id, ID, required: true
+    end
     def item(id:)
       Item.find(id)
     end
