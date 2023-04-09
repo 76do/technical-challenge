@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   enum status: { unpublished: 0, published: 1 }
   belongs_to :shop
   has_many :variations, dependent: :destroy
-  accepts_nested_attributes_for :variations
+  accepts_nested_attributes_for :variations, allow_destroy: true
 
   validates :price, presence: true
   validates :status, presence: true
