@@ -6,11 +6,9 @@ module Mutations
     argument :item_attributes, Types::ItemAttributes, required: true
 
     def resolve(shop_id:, item_attributes:)
-      puts shop_id
-      puts item_attributes
-      shop = Shop.find(shop_id)
+      shop = Shop.find_by(id: shop_id)
       unless shop
-        rails GraphQL::ExecutionError, "Shop not found"
+        raise GraphQL::ExecutionError, "Shop not found"
       end
       item = shop.items.build(item_attributes.to_h)
       if item.save
