@@ -2,8 +2,8 @@ module Mutations
   class CreateItem < BaseMutation
     field :item, Types::ItemType, null: false
 
-    argument :shop_id, Integer, required: true
-    argument :item_attributes, Types::ItemAttributes, required: true
+    argument :shop_id, ID, required: true
+    argument :item_attributes, Attributes::ItemAttributes, required: true
 
     def resolve(shop_id:, item_attributes:)
       shop = Shop.find_by(id: shop_id)

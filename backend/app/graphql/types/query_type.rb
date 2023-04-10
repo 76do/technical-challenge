@@ -13,10 +13,10 @@ module Types
     end
 
     field :item, Types::ItemType, null: false do
-      argument :id, ID, required: true
+      argument :item_id, ID, required: true
     end
-    def item(id:)
-      Item.find(id)
+    def item(item_id:)
+      Item.find(item_id)
     end
   end
 end

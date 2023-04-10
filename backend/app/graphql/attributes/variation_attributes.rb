@@ -1,5 +1,5 @@
-module Types
-  class VariationAttributes < Types::BaseInputObject
+module Attributes
+  class VariationAttributes < BaseInputObject
     description "Attributes for creating or updating variation"
     argument :id, ID, required: false 
     argument :color, Integer, required: true
