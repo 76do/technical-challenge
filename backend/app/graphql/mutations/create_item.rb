@@ -8,7 +8,7 @@ module Mutations
     def resolve(shop_id:, item_attributes:)
       shop = Shop.find_by(id: shop_id)
       unless shop
-        raise GraphQL::ExecutionError, "Shop not found"
+        raise GraphQL::ExecutionError, ["Shop not found"]
       end
       item = shop.items.build(item_attributes.to_h)
       if item.save
