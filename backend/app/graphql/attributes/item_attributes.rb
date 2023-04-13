@@ -1,6 +1,6 @@
-module Attributes 
+module Attributes
   class ItemAttributes < BaseInputObject
-    description "Attributes for creating or updating item"
+    description 'Attributes for creating or updating item'
     argument :title, String, required: true
     argument :price, Integer, required: true
     argument :status, Integer, required: true
