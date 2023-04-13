@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      item: 商品
+      shop: 店
+      variation: バリエーション
+    attributes:
+      shop:
+        id: ID
+        name: 店名
+      item:
+        id: ID
+        price: 価格
+        status: 公開フラグ
+        title: タイトル
+      item/variations:
+        id: ID
+        color: 色
+        size: サイズ
+        stock: 在庫
+      variation:
+        id: ID
+        color: 色
+        size: サイズ
+        stock: 在庫
+  attributes:
+    created_at: 作成日
+    updated_at: 更新日
