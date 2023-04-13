@@ -7,11 +7,19 @@ module Types
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    field :items, [Types::ItemType], null: false
+    def items
+      Item.all
+    end
+
+    field :item, Types::ItemType, null: false do
+      argument :item_id, ID, required: true
+    end
+    def item(item_id:)
+      item = Item.find_by(id: item_id)
+      raise GraphQL::ExecutionError, [I18n.t('activerecord.errors.messages.item_not_found')] unless item
+
+      item
     end
   end
 end
