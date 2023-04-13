@@ -23,6 +23,10 @@ ja:
         color: 色
         size: サイズ
         stock: 在庫
+    errors:
+      messages:
+        shop_not_found: 店が見つかりませんでした
+        item_not_found: 商品が見つかりませんでした
   attributes:
     created_at: 作成日
     updated_at: 更新日

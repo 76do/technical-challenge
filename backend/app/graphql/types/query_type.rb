@@ -16,7 +16,10 @@ module Types
       argument :item_id, ID, required: true
     end
     def item(item_id:)
-      Item.find(item_id)
+      item = Item.find_by(id: item_id)
+      raise GraphQL::ExecutionError, [I18n.t('activerecord.errors.messages.item_not_found')] unless item
+
+      item
     end
   end
 end
